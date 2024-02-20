@@ -57,7 +57,7 @@ export const BRIDGE_CALL_PERMIT_GAS_LIMIT_INCREASE = 100000;
 export const GAS_PRICE_INCREASE_PERCENTAGE = 50; // 50%
 
 export const DEPOSIT_CHECK_WORD = "I understand";
-
+//
 export const ETH_TOKEN_LOGO_URI =
   "https://raw.githubusercontent.com/Uniswap/interface/main/src/assets/images/ethereum-logo.png";
 
