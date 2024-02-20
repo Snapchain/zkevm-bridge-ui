@@ -61,7 +61,7 @@ export const DEPOSIT_CHECK_WORD = "I understand";
 export const ETH_TOKEN_LOGO_URI =
   "https://raw.githubusercontent.com/Uniswap/interface/main/src/assets/images/ethereum-logo.png";
 
-export const POLYGON_SUPPORT_URL = "https://support.polygon.technology";
+export const MMMMPOLYGON_SUPPORT_URL = "https://support.polygon.technology";
 
 export const POLYGON_TERMS_AND_CONDITIONS_URL = "https://polygon.technology/terms-of-use";
 
