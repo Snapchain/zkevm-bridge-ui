@@ -63,7 +63,7 @@ export const ETH_TOKEN_LOGO_URI =
 
 export const POLYGON_SUPPORT_URL = "https://support.polygon.technology";
 
-export const POLYGON_TERMS_AND_CONDITIONS_URL = "https://polygon.technology/terms-of-use";
+export const POLYGON_TERMS_AND_CONDITIONS_URL = "https://www.snapchain.dev/terms-and-conditions.html";
 
 export const POLYGON_PRIVACY_POLICY_URL = "https://polygon.technology/privacy-policy";
 
