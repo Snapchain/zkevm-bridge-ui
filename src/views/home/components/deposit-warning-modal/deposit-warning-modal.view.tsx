@@ -13,6 +13,7 @@ import { Card } from "src/views/shared/card/card.view";
 import { ExternalLink } from "src/views/shared/external-link/external-link.view";
 import { Portal } from "src/views/shared/portal/portal.view";
 import { Typography } from "src/views/shared/typography/typography.view";
+import { useEnvContext } from "src/contexts/env.context";
 
 interface DepositWarningModalProps {
   formData: FormData;
@@ -26,6 +27,11 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
   onCancel,
 }) => {
   const classes = useDepositWarningModalStyles();
+  const env = useEnvContext();
+
+  if (!env) {
+    return null;
+  }
 
   return (
     <Portal>
@@ -35,7 +41,7 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
             Warning
           </Typography>
           <Typography className={classes.warningText} type="body1">
-            You are about to transfer tokens using the Polygon zkEVM Mainnet Beta. There are risks
+            You are about to transfer tokens using the {env.replaceName} Mainnet Beta. There are risks
             associated with your use of the Mainnet Beta here. You agree to the{" "}
             <ExternalLink href={POLYGON_TERMS_AND_CONDITIONS_URL}>Terms of Use</ExternalLink>,
             including{" "}

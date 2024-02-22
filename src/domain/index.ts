@@ -91,6 +91,7 @@ export interface Env {
         title?: string;
         url?: string;
       };
+  replaceName: string;
   reportForm: ReportFormEnvEnabled | ReportFormEnvDisabled;
 }
 

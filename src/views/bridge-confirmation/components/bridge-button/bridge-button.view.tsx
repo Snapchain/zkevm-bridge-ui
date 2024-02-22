@@ -2,6 +2,7 @@ import { FC } from "react";
 
 import { AsyncTask, Token } from "src/domain";
 import { Button } from "src/views/shared/button/button.view";
+import { useEnvContext } from "src/contexts/env.context";
 
 interface BridgeButtonProps {
   approvalTask: AsyncTask<null, string>;
@@ -26,12 +27,17 @@ export const BridgeButton: FC<BridgeButtonProps> = ({
     </Button>
   );
 
+  const env = useEnvContext();
+  if (!env) {
+    return null;
+  }
+
   if (isTxApprovalRequired) {
     switch (approvalTask.status) {
       case "pending": {
         return (
           <Button onClick={onApprove}>
-            {`Allow Polygon zkEVM Bridge to spend my ${token.symbol}`}
+            {`Allow ${env.replaceName} Bridge to spend my ${token.symbol}`}
           </Button>
         );
       }
