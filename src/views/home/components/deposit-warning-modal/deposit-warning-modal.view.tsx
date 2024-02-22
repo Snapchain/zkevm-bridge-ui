@@ -6,6 +6,7 @@ import {
   POLYGON_ZKEVM_RISK_DISCLOSURES_URL,
 } from "src/constants";
 
+import { useEnvContext } from "src/contexts/env.context";
 import { FormData } from "src/domain";
 import { useDepositWarningModalStyles } from "src/views/home/components/deposit-warning-modal/deposit-warning-modal.styles";
 import { TextMatchForm } from "src/views/home/components/text-match-form/text-match-form.view";
@@ -13,7 +14,6 @@ import { Card } from "src/views/shared/card/card.view";
 import { ExternalLink } from "src/views/shared/external-link/external-link.view";
 import { Portal } from "src/views/shared/portal/portal.view";
 import { Typography } from "src/views/shared/typography/typography.view";
-import { useEnvContext } from "src/contexts/env.context";
 
 interface DepositWarningModalProps {
   formData: FormData;

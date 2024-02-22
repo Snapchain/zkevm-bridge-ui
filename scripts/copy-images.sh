@@ -6,6 +6,7 @@ DESTINATION_DIR="src/assets"
 LOGO_FILENAME="polygon-zkevm-logo.svg"
 L1_FILENAME="icons/chains/ethereum.svg"
 L2_FILENAME="icons/chains/polygon-zkevm.svg"
+ICON_FILENAME="public/favicon.ico" 
 
 # Check if source directory exists
 if [ ! -d "$SOURCE_DIR" ]; then
@@ -22,4 +23,4 @@ fi
 cp "$SOURCE_DIR/logo.svg" "$DESTINATION_DIR/$LOGO_FILENAME"
 cp "$SOURCE_DIR/l1.svg" "$DESTINATION_DIR/$L1_FILENAME"
 cp "$SOURCE_DIR/l2.svg" "$DESTINATION_DIR/$L2_FILENAME"
-
+cp "$SOURCE_DIR/icon.png" "$ICON_FILENAME"

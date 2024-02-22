@@ -1,8 +1,8 @@
 import { FC } from "react";
 
+import { useEnvContext } from "src/contexts/env.context";
 import { AsyncTask, Token } from "src/domain";
 import { Button } from "src/views/shared/button/button.view";
-import { useEnvContext } from "src/contexts/env.context";
 
 interface BridgeButtonProps {
   approvalTask: AsyncTask<null, string>;
