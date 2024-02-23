@@ -8,12 +8,14 @@ import {
 
 import { useEnvContext } from "src/contexts/env.context";
 import { FormData } from "src/domain";
+import { getDeploymentName } from "src/utils/labels";
 import { useDepositWarningModalStyles } from "src/views/home/components/deposit-warning-modal/deposit-warning-modal.styles";
 import { TextMatchForm } from "src/views/home/components/text-match-form/text-match-form.view";
 import { Card } from "src/views/shared/card/card.view";
 import { ExternalLink } from "src/views/shared/external-link/external-link.view";
 import { Portal } from "src/views/shared/portal/portal.view";
 import { Typography } from "src/views/shared/typography/typography.view";
+
 
 interface DepositWarningModalProps {
   formData: FormData;
@@ -28,10 +30,14 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
 }) => {
   const classes = useDepositWarningModalStyles();
   const env = useEnvContext();
+ 
 
   if (!env) {
     return null;
   }
+
+  const ethereumChain = env.chains[0];
+  const deploymentName = getDeploymentName(ethereumChain);
 
   return (
     <Portal>
@@ -41,7 +47,7 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
             Warning
           </Typography>
           <Typography className={classes.warningText} type="body1">
-            You are about to transfer tokens using the {env.replaceName} Mainnet Beta. There are risks
+            You are about to transfer tokens using the {deploymentName} Mainnet Beta. There are risks
             associated with your use of the Mainnet Beta here. You agree to the{" "}
             <ExternalLink href={POLYGON_TERMS_AND_CONDITIONS_URL}>Terms of Use</ExternalLink>,
             including{" "}
