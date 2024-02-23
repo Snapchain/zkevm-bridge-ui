@@ -12,7 +12,7 @@ export default defineConfig({
     sourcemap: true,
   },
   define: {
-    bridgeVersion: JSON.stringify(process.env.npm_package_version),   
+    bridgeVersion: JSON.stringify(process.env.npm_package_version),
   },
   plugins: [
     react({

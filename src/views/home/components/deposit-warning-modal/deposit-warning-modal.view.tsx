@@ -16,7 +16,6 @@ import { ExternalLink } from "src/views/shared/external-link/external-link.view"
 import { Portal } from "src/views/shared/portal/portal.view";
 import { Typography } from "src/views/shared/typography/typography.view";
 
-
 interface DepositWarningModalProps {
   formData: FormData;
   onAccept: (formData: FormData, hideDepositWarning: boolean) => void;
@@ -31,7 +30,6 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
   const classes = useDepositWarningModalStyles();
   const env = useEnvContext();
  
-
   if (!env) {
     return null;
   }
@@ -47,7 +45,7 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
             Warning
           </Typography>
           <Typography className={classes.warningText} type="body1">
-            You are about to transfer tokens using the {deploymentName} Mainnet Beta. There are risks
+            You are about to transfer tokens using the {env.replaceName} {deploymentName || ""}. There are risks
             associated with your use of the Mainnet Beta here. You agree to the{" "}
             <ExternalLink href={POLYGON_TERMS_AND_CONDITIONS_URL}>Terms of Use</ExternalLink>,
             including{" "}
