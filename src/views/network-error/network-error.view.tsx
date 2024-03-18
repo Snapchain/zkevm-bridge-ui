@@ -23,7 +23,7 @@ export const NetworkError: FC = () => {
 
   const parsedProviderError = providerError.safeParse(state);
 
-  const replaceName = env? env.replaceName:"Snapchain Pangu";
+  const replaceName = env? env.replaceName : "Blockchain";
 
   return parsedProviderError.success ? (
     <div className={classes.wrapper}>

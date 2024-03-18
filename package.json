@@ -7,7 +7,7 @@
     "generate-contract-types": "./scripts/generate-contract-types.sh",
     "copy-images": "./scripts/copy-images.sh",
     "prepare": "husky install",
-    "postinstall": "npm run generate-contract-types && npm run copy-images",
+    "postinstall": "npm run generate-contract-types",
     "format": "prettier --write .",
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
