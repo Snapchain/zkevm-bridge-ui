@@ -41,7 +41,8 @@ export function getDeploymentName(chain: Chain): string | undefined {
     case EthereumChainId.MAINNET: {
       return "Mainnet Beta";
     }
-    case EthereumChainId.GOERLI: {
+    case EthereumChainId.GOERLI:
+    case EthereumChainId.SEPOLIA: {
       return "Testnet";
     }
     default: {

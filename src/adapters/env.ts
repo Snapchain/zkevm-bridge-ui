@@ -27,6 +27,7 @@ interface Env {
   VITE_POLYGON_ZK_EVM_EXPLORER_URL: string;
   VITE_POLYGON_ZK_EVM_NETWORK_ID: string;
   VITE_POLYGON_ZK_EVM_RPC_URL: string;
+  VITE_REPLACE_NAME: string;
   VITE_REPORT_FORM_ERROR_ENTRY?: string;
   VITE_REPORT_FORM_PLATFORM_ENTRY?: string;
   VITE_REPORT_FORM_URL?: string;
@@ -176,6 +177,7 @@ const envToDomain = ({
   VITE_POLYGON_ZK_EVM_EXPLORER_URL,
   VITE_POLYGON_ZK_EVM_NETWORK_ID,
   VITE_POLYGON_ZK_EVM_RPC_URL,
+  VITE_REPLACE_NAME,
   VITE_REPORT_FORM_ERROR_ENTRY,
   VITE_REPORT_FORM_PLATFORM_ENTRY,
   VITE_REPORT_FORM_URL,
@@ -189,6 +191,7 @@ const envToDomain = ({
     VITE_ETHEREUM_FORCE_UPDATE_GLOBAL_EXIT_ROOT
   );
   const bridgeApiUrl = VITE_BRIDGE_API_URL;
+  const replaceName = VITE_REPLACE_NAME;
   const outdatedNetworkModal: domain.Env["outdatedNetworkModal"] = isOutdatedNetworkModalEnabled
     ? {
         isEnabled: true,
@@ -236,6 +239,7 @@ const envToDomain = ({
       forceUpdateGlobalExitRootForL1,
       isDepositWarningEnabled,
       outdatedNetworkModal,
+      replaceName,
       reportForm: getReportFormEnv({
         VITE_ENABLE_REPORT_FORM,
         VITE_REPORT_FORM_ERROR_ENTRY,
@@ -272,6 +276,7 @@ const envParser = StrictSchema<Env, domain.Env>()(
       VITE_POLYGON_ZK_EVM_EXPLORER_URL: z.string().url(),
       VITE_POLYGON_ZK_EVM_NETWORK_ID: z.string(),
       VITE_POLYGON_ZK_EVM_RPC_URL: z.string().url(),
+      VITE_REPLACE_NAME: z.string(),
       VITE_REPORT_FORM_ERROR_ENTRY: z.string().optional(),
       VITE_REPORT_FORM_PLATFORM_ENTRY: z.string().optional(),
       VITE_REPORT_FORM_URL: z.string().optional(),
