@@ -23,6 +23,8 @@ export const NetworkError: FC = () => {
 
   const parsedProviderError = providerError.safeParse(state);
 
+  const replaceName = env? env.replaceName : "Blockchain";
+
   return parsedProviderError.success ? (
     <div className={classes.wrapper}>
       <PolygonZkEVMLogo className={classes.logo} />
@@ -31,7 +33,7 @@ export const NetworkError: FC = () => {
         <Typography type="body1">
           {parsedProviderError.data === ProviderError.Ethereum
             ? "We cannot connect to the Ethereum node."
-            : "We cannot connect to the Polygon zkEVM node."}
+            : `We cannot connect to the ${replaceName} node.`}
         </Typography>
         <Typography type="body2">It will be operative again soon</Typography>
       </div>

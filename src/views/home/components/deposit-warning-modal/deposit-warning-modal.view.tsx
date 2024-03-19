@@ -6,7 +6,9 @@ import {
   POLYGON_ZKEVM_RISK_DISCLOSURES_URL,
 } from "src/constants";
 
+import { useEnvContext } from "src/contexts/env.context";
 import { FormData } from "src/domain";
+import { getDeploymentName } from "src/utils/labels";
 import { useDepositWarningModalStyles } from "src/views/home/components/deposit-warning-modal/deposit-warning-modal.styles";
 import { TextMatchForm } from "src/views/home/components/text-match-form/text-match-form.view";
 import { Card } from "src/views/shared/card/card.view";
@@ -26,6 +28,14 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
   onCancel,
 }) => {
   const classes = useDepositWarningModalStyles();
+  const env = useEnvContext();
+ 
+  if (!env) {
+    return null;
+  }
+
+  const ethereumChain = env.chains[0];
+  const deploymentName = getDeploymentName(ethereumChain);
 
   return (
     <Portal>
@@ -35,8 +45,8 @@ export const DepositWarningModal: FC<DepositWarningModalProps> = ({
             Warning
           </Typography>
           <Typography className={classes.warningText} type="body1">
-            You are about to transfer tokens using the Polygon zkEVM Mainnet Beta. There are risks
-            associated with your use of the Mainnet Beta here. You agree to the{" "}
+            You are about to transfer tokens using the {env.replaceName} {deploymentName || ""}. There are risks
+            associated with your use of the {deploymentName || ""} here. You agree to the{" "}
             <ExternalLink href={POLYGON_TERMS_AND_CONDITIONS_URL}>Terms of Use</ExternalLink>,
             including{" "}
             <ExternalLink href={POLYGON_ZKEVM_RISK_DISCLOSURES_URL}>those risks</ExternalLink>, and

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "generate-contract-types": "./scripts/generate-contract-types.sh",
+    "copy-images": "./scripts/copy-images.sh",
     "prepare": "husky install",
     "postinstall": "npm run generate-contract-types",
     "format": "prettier --write .",
@@ -42,6 +43,7 @@
     "typescript": "^4.6.4",
     "vite": "^3.0.0",
     "vite-plugin-checker": "^0.4.9",
+    "vite-plugin-html": "^3.2.2",
     "vite-plugin-svgr": "^2.2.1"
   },
   "eslintConfig": {

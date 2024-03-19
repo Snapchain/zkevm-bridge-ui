@@ -61,11 +61,11 @@ export const DEPOSIT_CHECK_WORD = "I understand";
 export const ETH_TOKEN_LOGO_URI =
 "https://raw.githubusercontent.com/Uniswap/interface/main/packages/ui/src/assets/logos/png/ethereum-logo.png";
 
-export const POLYGON_SUPPORT_URL = "https://support.polygon.technology";
+export const POLYGON_SUPPORT_URL = "mailto:support@snapchain.dev";
 
-export const POLYGON_TERMS_AND_CONDITIONS_URL = "https://polygon.technology/terms-of-use";
+export const POLYGON_TERMS_AND_CONDITIONS_URL = "https://www.snapchain.dev/terms-and-conditions.html";
 
-export const POLYGON_PRIVACY_POLICY_URL = "https://polygon.technology/privacy-policy";
+export const POLYGON_PRIVACY_POLICY_URL = "https://www.snapchain.dev/privacy.html";
 
 export const POLYGON_ZKEVM_RISK_DISCLOSURES_URL =
   "https://wiki.polygon.technology/docs/zkEVM/#polygon-zkevm-risk-disclosures";
